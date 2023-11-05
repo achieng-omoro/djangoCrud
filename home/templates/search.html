@@ -1,0 +1,55 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block body %}
+
+    <br><br>
+    <title>hire</title>
+<h3>Search results</h3>
+    <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" action="{% url 'home:search' %}" method="get" role="search">
+      <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    <br>
+{% if data %}
+<div class="row">
+
+{% for d in data%}
+
+    <div class="col-md-3 m-6 mb-2 ml-2">
+
+    <div class="card">
+  <img src="http://127.0.0.1:8000/media/{{ d.image }}"  class="card-img-top" alt="media/{{ d.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ d.name }}</h5>
+      <p class="card-text">{{ d.phone }}</p>
+    <p class="card-text">{{ d.licence }}</p>
+
+  </div>
+</div>
+
+    </div>
+
+{% endfor %}
+
+</div>
+
+    {% else %}
+      <section id="not-found" class="bodys">
+    <div id="title"> 404 Error Page</div>
+    <div class="circles">
+      <p>404<br>
+       <small>PAGE NOT FOUND</small>
+      </p>
+      <span class="circle big"></span>
+      <span class="circle med"></span>
+      <span class="circle small"></span>
+    </div>
+  </section>
+    {% endif %}
+{% endblock %}

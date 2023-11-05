@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <title>Edit</title>
+
+    <br><br>
+<div class="container right-panel-active">
+	<!-- Sign Up -->
+	<div class="container__form container--signup">
+		<form action="" class="form"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<h2 class="form__title">Edit Driver Details</h2>
+			<input type="text" name="name" required placeholder="Full Name" value="{{ driver.name }}" class="input" />
+			<input type="email" name="email" required placeholder="Email" value="{{ driver.email }}" class="input" />
+            <input type="number" name="phone" required placeholder="Phone" value="{{ driver.phone }}" class="input" />
+             <input type="text" name="licence" required placeholder="Class A,B,C" value="{{ driver.licence }}" class="input" />
+
+{#            <img src="/media/{{ driver }}" alt="{{ driver.name }}">#}
+			<input type="file" name="image" accept="image/png, image/gif, image/jpg" class="input" required />
+
+
+            <input type="submit" class="form-control btn btn-success">
+		</form>
+	</div>
+
+	<!-- Sign In -->
+
+
+	<!-- Overlay -->
+	<div class="container__overlay">
+		<div class="overlay">
+			<div class="overlay__panel overlay--left">
+				<button class="btn" id="signIn">Register</button>
+			</div>
+			<div class="overlay__panel overlay--right">
+				<button class="btn" id="signUp">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
