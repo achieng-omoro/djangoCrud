@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
-from .models import driver, slider
+from .models import driver, Slider
 from django.contrib import messages
 
 
@@ -75,8 +75,8 @@ def edit(request, id):
     return render(request, 'edit.html', {'driver': drivers})
 
 
-def slider(request):
-    slides = slider.objects.all()
+def Slider(request):
+    slides = Slider.objects.all()
     return render(request, 'slider.html', {'navbar': 'slider', 'slides': slides})
 
 
