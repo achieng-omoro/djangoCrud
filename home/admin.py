@@ -1,7 +1,7 @@
 from django.contrib import admin
-from . models import driver, slider
+from . models import driver, Slider
 # Register your models here.
 
 
 admin.site.register(driver)
-admin.site.register(slider)
+admin.site.register(Slider)
