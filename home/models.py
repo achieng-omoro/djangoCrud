@@ -13,7 +13,7 @@ class driver (models.Model):
         return self.name
 
 
-class slider(models.Model):
+class Slider(models.Model):
     text = models.CharField(max_length=50, blank=False, null=False)
     text1 = models.CharField(max_length=30, blank=False, null=False)
     image = models.ImageField(upload_to="uploads/slider", default="uploads/slider/profile.jpg")
