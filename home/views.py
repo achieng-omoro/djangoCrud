@@ -75,7 +75,7 @@ def edit(request, id):
     return render(request, 'edit.html', {'driver': drivers})
 
 
-def Slider(request):
+def slider(request):
     slides = Slider.objects.all()
     return render(request, 'slider.html', {'navbar': 'slider', 'slides': slides})
 
